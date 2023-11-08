@@ -10,6 +10,7 @@ CREATE TABLE owners(
 	phone VARCHAR(50) NOT NULL
 );
 
+-- feat/create-table-animals
 CREATE TABLE animals(
 	animalid INT PRIMARY KEY,
 	name VARCHAR(50) NOT NULL,
@@ -22,6 +23,7 @@ CREATE TABLE animals(
 	foreign key (ownerid) references owners(ownerid)
 );
 
+-- feat/create-table-appointments
 CREATE TABLE appointments(
 	appointid INT PRIMARY KEY,
 	appointdate DATE,
@@ -47,3 +49,17 @@ CREATE TABLE invoices(
 	appointid INT,
 	foreign key (appointid) references appointments(appointid)
 );
+
+-- feat/create-table-medicalrecords
+CREATE TABLE medicalrecords(
+	recordid INT PRIMARY KEY,
+	recorddate TIMESTAMP,
+	diagnosis VARCHAR(1000) NOT NULL,
+	prescription VARCHAR(2000) NOT NULL,
+	notes VARCHAR(2000) NOT NULL,
+	animalid INT,
+	doctorid INT,
+	foreign key (animalid) references animals(animalid),
+	foreign key (doctorid) references doctors(doctorid)
+);
+
