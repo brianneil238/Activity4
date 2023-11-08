@@ -21,3 +21,4 @@ CREATE TABLE animals(
 	ownerid INT,
 	foreign key (ownerid) references owners(ownerid)
 );
+
