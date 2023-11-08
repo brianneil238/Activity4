@@ -22,3 +22,10 @@ CREATE TABLE animals(
 	foreign key (ownerid) references owners(ownerid)
 );
 
+CREATE TABLE appointments(
+	appointid INT PRIMARY KEY,
+	appointdate DATE,
+	reason VARCHAR(255) NOT NULL,
+	animalid INT,
+	foreign key (animalid) references animals(animalid)
+);
