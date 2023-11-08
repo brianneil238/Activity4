@@ -8,3 +8,4 @@ CREATE TABLE owners(
 	address VARCHAR(100) NOT NULL,
 	email VARCHAR(100) NOT NULL,
 	phone VARCHAR(50) NOT NULL
+);
